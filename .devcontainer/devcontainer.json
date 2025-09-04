@@ -1,0 +1,51 @@
+{
+    "name": "Keras DL 2e",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "PYTHON_VERSION": "3.11"
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.vscode-pylance",
+                "github.vscode-pull-request-github",
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.analysis.typeCheckingMode": "basic",
+                "jupyter.askForKernelRestart": false,
+                "jupyter.notebookFileRoot": "${workspaceFolder}",
+                "files.exclude": {
+                    "**/__pycache__": true,
+                    "**/.ipynb_checkpoints": true
+                }
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "runArgs": [
+        "--shm-size=2g"
+    ],
+    "containerEnv": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PIP_NO_CACHE_DIR": "1"
+    },
+    "portsAttributes": {
+        "8888": {
+            "label": "Jupyter"
+        }
+    },
+    "forwardPorts": [
+        8888
+    ]
+}
