@@ -13,7 +13,8 @@ else
         jupyterlab notebook ipykernel \
         numpy pandas matplotlib seaborn scikit-learn \
         pillow requests tqdm \
-        tensorflow==2.17.* keras==3.*
+        tensorflow[and-cuda]==2.17.* \
+        "keras==3.*"
 fi
 
 echo "[setup] Jupyter 커널 등록"

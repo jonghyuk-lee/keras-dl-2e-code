@@ -35,9 +35,25 @@ code .
 
 ## 3. Dev Container로 열기
 
-VS Code에서 저장소를 연 뒤 다음 중 하나를 선택합니다.
+먼저 사용할 환경을 선택합니다.
+
+- CPU 환경
+  ```bash
+  bash .devcontainer/use-cpu.sh
+  ```
+- GPU 환경
+  ```bash
+  bash .devcontainer/use-gpu.sh
+  ```
+위 스크립트는 .devcontainer/devcontainer.json 심볼릭 링크를 CPU용 또는 GPU용 설정 파일로 바꿉니다.
+
+그 다음 VS Code에서 저장소를 연 뒤 다음 중 하나를 선택합니다.
 - 오른쪽 아래에 표시되는 "Reopen in Container" 클릭
 - 또는 Ctrl+Shift+P → Dev Containers: Reopen in Container
+
+이미 Dev Container가 한 번 만들어진 상태에서 CPU/GPU 환경을 바꾼 경우에는 링크만 바꿔서는 반영되지 않으므로, 아래 명령을 사용해 컨테이너를 다시 열어야 합니다.
+
+- Ctrl+Shift+P → Dev Containers: Rebuild and Reopen in Container
 
 처음 실행할 때는 Docker 이미지 빌드와 Python 패키지 설치 때문에 시간이 조금 걸릴 수 있습니다.
 정상적으로 완료되면 VS Code가 컨테이너 내부 환경으로 다시 열립니다.
