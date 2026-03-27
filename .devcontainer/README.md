@@ -57,3 +57,18 @@ code .
 
 처음 실행할 때는 Docker 이미지 빌드와 Python 패키지 설치 때문에 시간이 조금 걸릴 수 있습니다.
 정상적으로 완료되면 VS Code가 컨테이너 내부 환경으로 다시 열립니다.
+
+GPU Dev Container로 실행한 경우에는 터미널이나 Python에서 아래 명령으로 GPU 사용 가능 여부를 확인할 수 있습니다.
+
+터미널에서 NVIDIA GPU 인식 확인
+
+```bash
+nvidia-smi
+```
+
+Python에서 TensorFlow GPU 인식 확인
+
+```python
+import tensorflow as tf
+print(tf.config.list_physical_devices('GPU'))
+```
